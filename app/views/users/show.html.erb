@@ -1,0 +1,10 @@
+<h3>Your profile</h3>
+<div>
+	Name: <%= @user.name%>
+</div>
+<div>
+	Email: <%= @user.email%>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Cancel Account', @user, method: :delete, data: { confirm: 'Are you sure?' }%>

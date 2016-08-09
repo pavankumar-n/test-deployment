@@ -1,0 +1,24 @@
+<div id = 'header'>
+<div id= 'header-title'>
+	<h2>Demo App</h2>
+</div>
+<div id = 'header-links'>
+
+	<% if logged_in? %>
+	<p>
+	  logged in as <%=current_user.name %>
+  </p>
+    <% unless current_page?(user_path(current_user))%>
+      <%= link_to 'My Profile', user_path(current_user) %> |
+    <%end%>
+	  <%= link_to 'LOGOUT', logout_path, method: "delete" %>
+	<%else%>
+	  <% unless current_page?(login_path) %>
+	  	<%= link_to 'LOGIN', login_path %>
+	  <%end%>
+    <% unless current_page?(new_user_path) %>
+      <%= link_to 'SIGNUP', new_user_path %>
+    <%end%>
+	<%end%>
+</div>
+</div>

@@ -1,0 +1,13 @@
+<%= form_for @article do |f| %>
+<%= render "shared/error_messages", object: @article %>
+
+<div>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+</div>
+<div>
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+</div>
+	<%= f.submit %>
+<%end%>

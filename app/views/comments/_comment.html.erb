@@ -1,0 +1,11 @@
+<div class = 'message'>
+<p>
+  <%= comment.body%>
+</p>
+<p>
+	posted by:<%= comment.user.name %>
+</p>
+  <%= link_to 'edit', edit_article_comment_path(comment.article, comment) %> |
+  <%= link_to 'Destroy', [comment.article, comment], method: :delete, 
+    data: { confirm: 'Are you sure?' } %>
+</div>
