@@ -1,9 +1,12 @@
+<h2>Article</h2>
 <%= render @article %>
 <%= link_to 'Edit', edit_article_path(@article)%> |
 <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' }%>
-
-<h2>Comments</h2>
-<%= render @article.comments %> 
-
-<%= link_to 'Add comment', new_article_comment_path(@article) %>
-<%= link_to "All Articles", articles_path %>
+<% if @article.comments.any? %>
+  <h2>Comments</h2>
+  <%= render @article.comments %> 
+<% end %>
+<p>
+  <%= link_to 'New Comment', new_article_comment_path(@article) %>
+</p>
+<%#= link_to "All Articles", articles_path %>

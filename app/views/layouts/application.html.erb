@@ -7,13 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header><%= render 'layouts/header'%></header>
-  <%if flash[:notice] %>
-    <div class = "alert"><h4><%= flash[:notice] %></h4></div>
-  <% end%>
-  <div id = 'body'>
-    <%= yield %>
-  </div>
-  <footer><%= render 'layouts/footer' %></footer>
+  <!--header><%#= render 'layouts/header'%></header-->
+  <div id = 'container' >
+    <div id = 'top-header'> <%= render 'layouts/header'%> </div>
+    <div id = 'content'>
+      <%if flash[:notice] %>
+        <div class = "alert"><h4><%= flash[:notice] %></h4></div>
+      <% end%>
+      <%= yield %>
+    </div>
+    <div id = 'bottom-footer'> <%= render 'layouts/footer' %> </div>
+  </div> 
+  <!--footer><%#= render 'layouts/footer' %></footer-->
 </body>
 </html>

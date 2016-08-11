@@ -11,3 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+#Igonre database.yml since it contains passwords
+/config/database.yml

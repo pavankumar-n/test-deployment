@@ -3,16 +3,17 @@
 	<h2>Demo App</h2>
 </div>
 <div id = 'header-links'>
-
 	<% if logged_in? %>
-	<p>
-	  logged in as <%=current_user.name %>
-  </p>
+	  <p>
+	    logged in as <%=current_user.name.capitalize %>
+    </p>
+    <%= link_to 'HOME', articles_path %> |
     <% unless current_page?(user_path(current_user))%>
       <%= link_to 'My Profile', user_path(current_user) %> |
     <%end%>
 	  <%= link_to 'LOGOUT', logout_path, method: "delete" %>
 	<%else%>
+	  <%= link_to 'HOME', articles_path %>
 	  <% unless current_page?(login_path) %>
 	  	<%= link_to 'LOGIN', login_path %>
 	  <%end%>

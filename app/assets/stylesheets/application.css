@@ -13,25 +13,34 @@
  *= require_tree .
  *= require_self
  */
-header{
-	width: 100%;
+ html,body {
+  height:100%;
+}
+
+ #container{
+   height:100%;
+   position:relative;
+ }
+
+#content{
+	min-height: 100%;
+}
+#top-header{
 	background-color: #292626;
 	overflow: hidden;
 	padding: 1em;
 	color: white;
 	position: relative;
-    top: 0;
+  top: 0;
 }
-footer {
-	width: 100%;
-    height: 50px;
-    background-color: #292626;
-    position: absolute;
-    bottom: 0;
-    color: white;
-    text-align: center;
+#bottom-footer {
+  height: 50px;
+  background-color: #292626;
+  position: relative;
+  bottom: 0;
+  color: white;
+  text-align: center;
 }
-
 
 #header-title{
 	float: left;
@@ -45,10 +54,15 @@ footer {
 	color: white;
 }
 
-div.message{
+.message{
 	width: 50%;
 	background-color: #e6e6e6;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	padding-bottom: 12px;
 }
+
 .alert{
    background-color: #e6e6e6;
    color: black;

@@ -30,13 +30,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-ruby '2.2.3', :engine => 'jruby', :engine_version => '9.0.5.0'
 group :development do
-	gem 'activerecord-jdbcsqlite3-adapter'
+	gem 'sqlite3'
 end
 
 group :production do
-  gem 'pg', '0.18.4'
+  gem 'pg', '~> 0.18.4'
 end
 
 

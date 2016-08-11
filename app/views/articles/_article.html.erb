@@ -1,10 +1,17 @@
 <div class = 'message'>
-<h3><%= article.title %></h3>
-<P>
-  <%= article.content%>
-</p>
-by:<%= article.user.name %>
-<% unless current_page?(article_path(article)) %>
-  <%= link_to "Show", article %>
-<%end%>
+  <div class = 'title'>
+    <h3><%= article.title.capitalize %></h3>
+    Posted by: <%= article.user.name.capitalize %> | <%= article.created_at %>
+  </div>
+  <hr>
+  <div class = 'body'>
+    <P>
+      <%= article.content%>
+    </p>
+  </div>
+  <% unless current_page?(article_path(article)) %>
+    <hr>
+    <%= pluralize(article.comments.count, "Comment")%>
+    <%= link_to "Show", article %>
+  <%end%>
 </div>
