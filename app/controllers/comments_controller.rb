@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def update
     #@comment = @article.comments.find(params[:id])
     if @comment.update(comment_params)
-      flash[:notice] = "comment was updated"
+      flash[:notice] = "comment was updated successfuly"
       redirect_to article_path(@article)
     else
       #there is no flas[:error] because when we will show validation errors

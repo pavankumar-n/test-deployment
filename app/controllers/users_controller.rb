@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       UserMailer.welcome_email(@user).deliver_now
-  		flash[:notice] = "Your account is successfully created"
+      flash[:notice] = "Your account is created successfully"
       log_in(@user)
   		redirect_to articles_path
   	else
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def update
     #@user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Your account was updated"
+      flash[:notice] = "Your account was updated successfully"
       redirect_to @user
     else
       render 'edit'

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   		log_in(@user)
   		redirect_to articles_path
   	else
-  		flash.now[:notice] = "Invalid user name or password"
+		  flash.now[:notice] = "Invalid Email or Password"
   		render 'new'
   	end
   end
