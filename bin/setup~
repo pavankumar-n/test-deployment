@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby.exe
+#!/usr/bin/env jruby.exe
 require 'pathname'
 
 # path to your application root.
