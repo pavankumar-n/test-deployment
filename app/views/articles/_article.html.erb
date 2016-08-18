@@ -1,7 +1,7 @@
 <div class = 'message'>
   <div class = 'title'>
     <h3><%= article.title.capitalize %></h3>
-    Posted by: <%= article.user.name.capitalize %> | <%= article.created_at %>
+    Posted by: <%= article.user.name.capitalize %> | <%= time_ago_in_words article.created_at %> ago
   </div>
   <hr>
   <div class = 'body'>
