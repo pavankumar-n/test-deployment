@@ -29,4 +29,4 @@ development:
   database: pavan
   pool: 5
   username: pavan
-  password: welcome123
+  password:

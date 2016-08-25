@@ -15,7 +15,7 @@ after :hello, :goodbye
 lock '3.6.0'
 
 set :application, 'cap-deploy'
-set :repo_url, 'git@github.com/pavankumar-n/test-deployment.git'
+set :repo_url, 'git@github.com:pavankumar-n/test-deployment.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -54,3 +54,14 @@ set :rbenv_ruby, '2.3.0'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default valu
+=begin
+namespace :deploytest do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+end
+=end
